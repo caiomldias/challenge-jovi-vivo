@@ -1,45 +1,45 @@
 # Challenge JOVI Vivo
 
-Projeto academico desenvolvido para o Challenge JOVI, com foco em uma proposta de experiencia para o smartphone JOVI V70.
+Projeto acadêmico desenvolvido para o Challenge JOVI, com foco em uma proposta de experiência para o smartphone JOVI V70.
 
 ## Proposta
 
-O projeto apresenta o **JOVI Smart Camera Assist**, uma experiencia guiada para ajudar usuarios a descobrirem recursos avancados da camera do celular sem depender de manuais ou menus complexos.
+O projeto apresenta o **JOVI Smart Camera Assist**, uma experiência guiada para ajudar usuários a descobrirem recursos avançados da câmera do celular sem depender de manuais ou menus complexos.
 
-A ideia central e adaptar a descoberta de recursos ao perfil de uso da pessoa, como estudante, idoso ou criador de conteudo, tornando a camera mais simples, util e contextual.
+A ideia central é adaptar a descoberta de recursos ao perfil de uso da pessoa, como estudante, idoso ou criador de conteúdo, tornando a câmera mais simples, útil e contextual.
 
 ## Problema trabalhado
 
-Muitos usuarios utilizam apenas uma pequena parte do potencial da camera do celular. Recursos como digitalizacao de documentos, estabilizacao, OCR e modos especificos ficam escondidos em menus pouco claros.
+Muitos usuários utilizam apenas uma pequena parte do potencial da câmera do celular. Recursos como digitalização de documentos, estabilização, OCR e modos específicos ficam escondidos em menus pouco claros.
 
-O projeto parte desse problema para propor uma experiencia mais acessivel, guiada e personalizada.
+O projeto parte desse problema para propor uma experiência mais acessível, guiada e personalizada.
 
-## Solucao proposta
+## Solução proposta
 
 - Perfil personalizado sem cadastro complexo
-- Recomendacao de recursos relevantes para cada tipo de usuario
-- Guia acessivel pelo navegador, sem necessidade de instalar outro app
-- Linguagem simples e exemplos praticos para facilitar a descoberta das funcoes
-- Experiencia pensada para aumentar percepcao de valor e pertencimento ao ecossistema JOVI
+- Recomendação de recursos relevantes para cada tipo de usuário
+- Guia acessível pelo navegador, sem necessidade de instalar outro app
+- Linguagem simples e exemplos práticos para facilitar a descoberta das funções
+- Experiência pensada para aumentar percepção de valor e pertencimento ao ecossistema JOVI
 
-## Minha participacao
+## Minha participação
 
-Participei da construcao da proposta, organizacao da narrativa da apresentacao, definicao do problema, estruturacao da solucao e preparacao do material final entregue.
+Participei da construção da proposta, organização da narrativa da apresentação, definição do problema, estruturação da solução e preparação do material final entregue.
 
-Tambem trabalhei na comunicacao visual e no raciocinio de produto: como transformar um problema de usabilidade em uma solucao simples, explicavel e aplicavel.
+Também trabalhei na comunicação visual e no raciocínio de produto: como transformar um problema de usabilidade em uma solução simples, explicável e aplicável.
 
-## Entregaveis
+## Entregáveis
 
-- `challenge-jovi-vivo-apresentacao.pdf`: apresentacao final do projeto JOVI Smart Camera Assist
+- `challenge-jovi-vivo-apresentacao.pdf`: apresentação final do projeto JOVI Smart Camera Assist
 
 ## Aprendizados
 
-- Como transformar uma dor de usuario em proposta de valor
-- Como estruturar uma apresentacao de produto
-- Importancia de segmentar usuarios por contexto de uso
-- Como conectar tecnologia, experiencia e valor percebido
-- Como explicar uma solucao de forma objetiva para banca academica
+- Como transformar uma dor de usuário em proposta de valor
+- Como estruturar uma apresentação de produto
+- Importância de segmentar usuários por contexto de uso
+- Como conectar tecnologia, experiência e valor percebido
+- Como explicar uma solução de forma objetiva para banca acadêmica
 
 ## Status
 
-Projeto academico entregue na FIAP.
+Projeto acadêmico entregue na FIAP.
