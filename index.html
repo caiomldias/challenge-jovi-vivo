@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="JOVI Smart Camera Assist: orientação personalizada para descobrir os recursos da câmera do celular."
+    />
+    <meta name="theme-color" content="#3047d9" />
+    <title>JOVI Smart Camera Assist</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              jovi: {
+                50: "#eef2ff",
+                100: "#dfe5ff",
+                500: "#4962ee",
+                600: "#3047d9",
+                700: "#2638ad",
+                950: "#151a42"
+              }
+            },
+            fontFamily: {
+              sans: ["Arial", "Helvetica", "sans-serif"]
+            }
+          }
+        }
+      };
+    </script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="min-h-[100dvh] bg-slate-100 text-slate-950 antialiased dark:bg-slate-950 dark:text-slate-50">
+    <a class="skip-link" href="#app-content">Pular para o conteúdo</a>
+
+    <div id="loading-screen" class="fixed inset-0 grid place-items-center bg-slate-100 dark:bg-slate-950" aria-live="polite">
+      <div class="w-[min(88vw,420px)] space-y-4">
+        <div class="skeleton h-7 w-28 rounded-xl"></div>
+        <div class="skeleton h-14 w-full rounded-xl"></div>
+        <div class="skeleton h-28 w-full rounded-xl"></div>
+      </div>
+      <span class="sr-only">Carregando experiência JOVI</span>
+    </div>
+
+    <div id="app-shell" class="hidden min-h-[100dvh]">
+      <header class="sticky top-0 z-20 border-b border-slate-200/80 bg-slate-100/95 backdrop-blur dark:border-slate-800 dark:bg-slate-950/95">
+        <div class="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
+          <button class="brand-button focus-ring" type="button" data-route="home" aria-label="Ir para o início">
+            <span class="text-xl font-black tracking-[-0.05em] text-jovi-600 dark:text-jovi-500">JOVI</span>
+            <span class="hidden text-xs font-bold uppercase tracking-[0.16em] text-slate-500 sm:inline">Smart Camera Assist</span>
+          </button>
+
+          <div class="flex items-center gap-2">
+            <button id="help-button" class="secondary-button focus-ring" type="button" aria-haspopup="dialog">Ajuda</button>
+            <button id="theme-button" class="secondary-button focus-ring" type="button" aria-pressed="false">Tema escuro</button>
+          </div>
+        </div>
+      </header>
+
+      <main id="app-content" class="mx-auto w-full max-w-6xl px-4 pb-28 pt-6 sm:px-6 sm:pt-10" tabindex="-1">
+        <section id="view-home" class="view" data-view="home">
+          <div class="grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr]">
+            <div class="max-w-2xl">
+              <p class="mb-4 text-sm font-bold uppercase tracking-[0.16em] text-jovi-600 dark:text-jovi-500">A câmera do seu jeito</p>
+              <h1 class="text-4xl font-black leading-[0.98] tracking-[-0.05em] text-slate-950 sm:text-5xl lg:text-6xl dark:text-slate-50">
+                Descubra a ferramenta certa sem procurar em menus.
+              </h1>
+              <p class="mt-6 max-w-[54ch] text-lg leading-relaxed text-slate-600 dark:text-slate-300">
+                Escolha seu perfil e receba um guia simples para usar melhor a câmera do JOVI V70.
+              </p>
+              <div class="mt-8 flex flex-wrap gap-3">
+                <button class="primary-button focus-ring" type="button" data-route="profiles">Começar</button>
+                <button class="secondary-button focus-ring" type="button" data-route="about">Conhecer a solução</button>
+              </div>
+              <p class="mt-4 text-sm text-slate-500 dark:text-slate-400">Sem login e sem cadastro.</p>
+            </div>
+
+            <div class="hero-visual" aria-label="Demonstração visual dos três perfis do assistente">
+              <div class="hero-orbit hero-orbit-one"></div>
+              <div class="hero-orbit hero-orbit-two"></div>
+              <div class="relative z-10 grid gap-3 p-5 sm:p-7">
+                <div class="profile-strip translate-x-2 bg-white dark:bg-slate-900">
+                  <span class="profile-index">A</span>
+                  <div><strong>Estudante</strong><span>Digitalizar e extrair texto</span></div>
+                </div>
+                <div class="profile-strip -translate-x-3 bg-jovi-950 text-white">
+                  <span class="profile-index border-white/30 bg-white/10 text-white">B</span>
+                  <div><strong>Idoso</strong><span class="text-slate-300">Fotografar com confiança</span></div>
+                </div>
+                <div class="profile-strip translate-x-5 bg-white dark:bg-slate-900">
+                  <span class="profile-index">C</span>
+                  <div><strong>Criador</strong><span>Gravar sem perder o momento</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="view-about" class="view hidden" data-view="about">
+          <div class="max-w-3xl">
+            <p class="section-kicker">Por que o assistente existe</p>
+            <h1 class="section-title">Muitos recursos. Pouca orientação.</h1>
+            <p class="section-copy">
+              A câmera oferece dezenas de funções, mas a maioria das pessoas usa apenas o básico. O JOVI organiza os recursos por contexto e explica cada função com exemplos claros.
+            </p>
+          </div>
+
+          <div class="mt-10 grid gap-5 md:grid-cols-[1.1fr_0.9fr]">
+            <article class="content-panel bg-jovi-950 text-white">
+              <h2 class="text-2xl font-black tracking-tight">O problema</h2>
+              <p class="mt-4 max-w-[50ch] text-lg leading-relaxed text-slate-300">
+                Menus complexos escondem recursos úteis como digitalização, OCR, estabilização e sugestões de iluminação.
+              </p>
+            </article>
+            <article class="content-panel border border-slate-200 bg-white dark:border-slate-800 dark:bg-slate-900">
+              <h2 class="text-2xl font-black tracking-tight">A resposta</h2>
+              <p class="mt-4 text-lg leading-relaxed text-slate-600 dark:text-slate-300">
+                Um guia no navegador que reorganiza a experiência para Estudante, Idoso ou Criador.
+              </p>
+            </article>
+          </div>
+
+          <button class="primary-button focus-ring mt-8" type="button" data-route="profiles">Escolher perfil</button>
+        </section>
+
+        <section id="view-profiles" class="view hidden" data-view="profiles">
+          <div class="max-w-3xl">
+            <p class="section-kicker">Personalização</p>
+            <h1 class="section-title">Qual uso combina mais com você?</h1>
+            <p class="section-copy">Selecione uma opção. Você poderá trocar de perfil quando quiser.</p>
+          </div>
+
+          <form id="profile-form" class="mt-10 grid gap-4" novalidate>
+            <fieldset>
+              <legend class="sr-only">Escolha um perfil de câmera</legend>
+              <div id="profile-options" class="grid gap-4 lg:grid-cols-[1.05fr_0.95fr]"></div>
+            </fieldset>
+            <p id="profile-error" class="hidden rounded-xl border border-red-300 bg-red-50 p-4 font-bold text-red-800 dark:border-red-900 dark:bg-red-950 dark:text-red-200" role="alert">
+              Escolha um perfil para continuar.
+            </p>
+            <div class="mt-2 flex flex-wrap gap-3">
+              <button class="primary-button focus-ring" type="submit">Ver meu guia</button>
+              <button class="secondary-button focus-ring" type="button" data-route="home">Voltar</button>
+            </div>
+          </form>
+        </section>
+
+        <section id="view-guide" class="view hidden" data-view="guide">
+          <div class="grid gap-8 lg:grid-cols-[0.78fr_1.22fr]">
+            <div>
+              <p class="section-kicker">Seu guia</p>
+              <h1 id="guide-title" class="section-title">Câmera pronta para você</h1>
+              <p id="guide-description" class="section-copy"></p>
+              <div class="mt-8 flex flex-wrap gap-3">
+                <button class="primary-button focus-ring" type="button" data-route="camera">Abrir demonstração</button>
+                <button class="secondary-button focus-ring" type="button" data-route="profiles">Trocar perfil</button>
+              </div>
+            </div>
+
+            <div id="guide-features" class="guide-list" aria-label="Recursos recomendados"></div>
+          </div>
+        </section>
+
+        <section id="view-camera" class="view hidden" data-view="camera">
+          <div class="grid gap-6 lg:grid-cols-[0.7fr_1.3fr]">
+            <aside class="camera-copy">
+              <p class="section-kicker">Demonstração</p>
+              <h1 id="camera-title" class="section-title">Câmera personalizada</h1>
+              <p id="camera-tip" class="section-copy"></p>
+              <div id="camera-tools" class="mt-7 flex flex-wrap gap-2" aria-label="Ferramentas ativas"></div>
+              <button class="secondary-button focus-ring mt-8" type="button" data-route="guide">Voltar ao guia</button>
+            </aside>
+
+            <div class="camera-device" aria-label="Demonstração interativa da câmera">
+              <div class="camera-topbar">
+                <strong id="camera-mode">Documento</strong>
+                <button id="grid-button" class="camera-control focus-ring" type="button" aria-pressed="true">Grade ativa</button>
+              </div>
+              <div id="camera-preview" class="camera-preview">
+                <img src="assets/camera-student.png" alt="Mesa de estudos com caderno aberto vista pela câmera" />
+                <div id="camera-grid" class="camera-grid" aria-hidden="true"></div>
+                <div id="scan-frame" class="scan-frame" aria-hidden="true"><span>Documento detectado</span></div>
+                <div id="flash-layer" class="flash-layer" aria-hidden="true"></div>
+              </div>
+              <div class="camera-toolbar">
+                <button id="gallery-button" class="camera-control focus-ring" type="button">Galeria <span id="gallery-count">0</span></button>
+                <button id="capture-button" class="shutter focus-ring" type="button" aria-label="Capturar foto"><span></span></button>
+                <button id="tip-button" class="camera-control focus-ring" type="button">Dica</button>
+              </div>
+              <p class="px-5 pb-5 text-center text-xs text-slate-500 dark:text-slate-400">Simulação acadêmica da interface. Não acessa a câmera real.</p>
+            </div>
+          </div>
+        </section>
+
+        <section id="view-gallery" class="view hidden" data-view="gallery">
+          <div class="max-w-3xl">
+            <p class="section-kicker">Galeria</p>
+            <h1 class="section-title">Suas demonstrações</h1>
+            <p class="section-copy">As capturas ficam apenas nesta sessão do navegador.</p>
+          </div>
+          <div id="gallery-empty" class="empty-state mt-10">
+            <h2 class="text-2xl font-black">Nenhuma captura ainda</h2>
+            <p class="mt-2 text-slate-600 dark:text-slate-300">Abra a demonstração e use o botão central para criar uma captura.</p>
+            <button class="primary-button focus-ring mt-6" type="button" data-route="camera">Abrir câmera</button>
+          </div>
+          <div id="gallery-items" class="mt-10 grid gap-5 sm:grid-cols-2"></div>
+        </section>
+      </main>
+
+      <nav class="fixed inset-x-0 bottom-0 z-20 border-t border-slate-200 bg-white/95 pb-[env(safe-area-inset-bottom)] backdrop-blur dark:border-slate-800 dark:bg-slate-900/95" aria-label="Navegação principal">
+        <div class="mx-auto grid max-w-xl grid-cols-4 px-2 py-2">
+          <button class="nav-button focus-ring" type="button" data-route="home">Início</button>
+          <button class="nav-button focus-ring" type="button" data-route="profiles">Perfis</button>
+          <button class="nav-button focus-ring" type="button" data-route="guide">Guia</button>
+          <button class="nav-button focus-ring" type="button" data-route="camera">Câmera</button>
+        </div>
+      </nav>
+    </div>
+
+    <div id="help-dialog" class="dialog-backdrop hidden" role="dialog" aria-modal="true" aria-labelledby="help-title">
+      <div class="dialog-panel">
+        <h2 id="help-title" class="text-2xl font-black tracking-tight">Como usar</h2>
+        <ol class="mt-5 space-y-4 text-slate-600 dark:text-slate-300">
+          <li><strong class="text-slate-950 dark:text-white">Escolha um perfil.</strong> O guia recomenda apenas os recursos úteis para você.</li>
+          <li><strong class="text-slate-950 dark:text-white">Leia as orientações.</strong> Cada recurso explica o que fazer.</li>
+          <li><strong class="text-slate-950 dark:text-white">Teste a câmera.</strong> A demonstração simula a captura e a galeria.</li>
+        </ol>
+        <button id="close-help" class="primary-button focus-ring mt-7" type="button">Entendi</button>
+      </div>
+    </div>
+
+    <div id="tip-dialog" class="dialog-backdrop hidden" role="dialog" aria-modal="true" aria-labelledby="tip-title">
+      <div class="dialog-panel">
+        <p class="section-kicker">Dica rápida</p>
+        <h2 id="tip-title" class="text-2xl font-black tracking-tight">Mantenha o celular estável</h2>
+        <p id="tip-dialog-copy" class="mt-4 leading-relaxed text-slate-600 dark:text-slate-300"></p>
+        <button id="close-tip" class="primary-button focus-ring mt-7" type="button">Voltar à câmera</button>
+      </div>
+    </div>
+
+    <div id="toast" class="toast hidden" role="status" aria-live="polite"></div>
+
+    <noscript>
+      <div class="m-6 rounded-xl border border-red-300 bg-red-50 p-6 text-red-900">
+        Ative o JavaScript para usar a jornada interativa do JOVI Smart Camera Assist.
+      </div>
+    </noscript>
+
+    <script src="app.js" defer></script>
+  </body>
+</html>
